@@ -186,7 +186,7 @@ class Lottery extends BasePlugin
         $response = Request::getJson(true, 'pc', $url, $payload);
 
         // 抽奖不存在
-        if ($response['code'] === -9999 || $response['code'] === 4000014 || $response['code'] === -412) {
+        if ($response == null || $response['code'] === -9999 || $response['code'] === 4000014 || $response['code'] === -412) {
 //            if ($response['code'] === -412) {
 //                Log::warning("抽奖：请求被拦截，暂定无效请求");
 //            }
